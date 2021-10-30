@@ -1,22 +1,24 @@
 import React from 'react';
+import './MenuBar.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container,  Nav, Navbar, } from 'react-bootstrap';
 import logo from '../../../image/logo (1).png'
+import { Link, NavLink } from 'react-router-dom';
 
 const MenuBar = () => {
     return (
         <div>
            
-  <Navbar expand="sm" >
+  <Navbar expand="sm" className="nav-bar"  >
   <Container>
-     <img className="w-50" href="#home" src={logo} alt="logo" />
+     <NavLink to="/home"><img className="w-75" href="#home" src={logo} alt="logo" /></NavLink>
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">
-      <Nav className="ms-auto">
-        <Nav.Link href="#home">Home</Nav.Link>
-        <Nav.Link href="#home">Home</Nav.Link>
-        <Nav.Link href="#home">Home</Nav.Link>
-        <Nav.Link href="#link"> Login</Nav.Link>
+      <Nav className="ms-auto navlink">
+        <Link className="mx-3 navlinks fw-bold fs-5" to="/home">home</Link>
+        <Link className="mx-3 navlinks fw-bold fs-5" to="/service">about</Link>
+        <Link className="mx-3 navlinks fw-bold fs-5" to="/about">about</Link>
+        <Link className="mx-3 navlinks fw-bold fs-5" to="/login" > Log In </Link>
         
       </Nav>
     </Navbar.Collapse>

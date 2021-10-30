@@ -1,7 +1,7 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import HomePage from './Components/HomePage/HomePage';
-import { Router,Route, Switch } from 'react-router-dom';
+import { BrowserRouter,Route, Switch } from 'react-router-dom';
 import Login from './Components/LoginDetails/Login/Login';
 
 
@@ -9,15 +9,16 @@ import Login from './Components/LoginDetails/Login/Login';
 function App() {
   return (
     <div className="App">
+      <BrowserRouter>
       <HomePage></HomePage>
-      <Router>
+
         <Switch>
-        <Route path="/login">
+        <Route exact path="/login">
             <Login></Login>
           </Route>
 
         </Switch>
-      </Router>
+      </BrowserRouter>
     </div>
   );
 }

@@ -5,8 +5,9 @@ import MenuBar from '../MenuBar/MenuBar';
 
 const Banner = () => {
     return (
-        <div>      <div className="banner ">
-        <MenuBar></MenuBar>
+        <div className="banner ">
+                  <div>           <MenuBar></MenuBar>
+
         <div className="container">
           <div className="row">
             <div className="col-md-6">

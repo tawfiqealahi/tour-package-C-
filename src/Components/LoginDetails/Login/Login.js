@@ -6,12 +6,18 @@ import { Link } from 'react-router-dom';
 
 
 const Login = () => {
-    return (
+    // const {signInWithGoogle}= useAuth;
+
+    const handleGoogleSignIn=()=>{
+console.log('clicked dfnhvjbfbhjibvjifnbvjirbfjhvbrfbvirfvjfddklfsn,m,vn');
+    }
+
+        return (
         <div>
-           <Link to='/login'> 
-           <Button> GOOGLE  LOGIN
+           
+           <Button onClick={handleGoogleSignIn}> GOOGLE  LOGIN
             </Button>
-           </Link>
+           
         </div>
     );
 };

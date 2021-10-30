@@ -2,20 +2,21 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Login.css';
 import { Button ,} from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import useAuth from '../../../Hooks/useAuth';
+import MenuBar from '../../Header/MenuBar/MenuBar';
 
 
 const Login = () => {
-    // const {signInWithGoogle}= useAuth;
 
-    const handleGoogleSignIn=()=>{
-console.log('clicked dfnhvjbfbhjibvjifnbvjirbfjhvbrfbvirfvjfddklfsn,m,vn');
-    }
+    const {signInWithGoogle}= useAuth();
+
+   
 
         return (
         <div>
+            <MenuBar></MenuBar>
            
-           <Button onClick={handleGoogleSignIn}> GOOGLE  LOGIN
+           <Button onClick={signInWithGoogle}> GOOGLE  LOGIN
             </Button>
            
         </div>

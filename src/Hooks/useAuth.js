@@ -1,28 +1,9 @@
-import React, { useState } from 'react';
-import firebaseConfig from '../Components/LoginDetails/firebase/firebase.config';
-import { getAuth,signInWithPopup, GoogleAuthProvider  } from "firebase/auth";
-
-
-
-firebaseConfig();
+import  { useContext } from 'react';
+import { AuthContext } from '../Components/Context/AuthProvider';
 
 const useAuth = () => {
-
-    const [user,setUser]=useState({});
-    const auth = getAuth();
-    const GoogleProvider = new GoogleAuthProvider();
-
-    const signInWithGoogle=()=>{
-
-         return(signInWithPopup(auth, GoogleProvider)
-         )
- 
-
-    }
-
-
     return (
-       user, setUser, signInWithGoogle
+        useContext(AuthContext)
     );
 };
 

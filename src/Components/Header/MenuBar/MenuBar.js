@@ -16,7 +16,7 @@ const MenuBar = () => {
     <Navbar.Collapse id="basic-navbar-nav">
       <Nav className="ms-auto navlink">
         <Link className="mx-3 navlinks fw-bold fs-5" to="/home">home</Link>
-        <Link className="mx-3 navlinks fw-bold fs-5" to="/service">about</Link>
+        <Link className="mx-3 navlinks fw-bold fs-5" to="/service">Service</Link>
         <Link className="mx-3 navlinks fw-bold fs-5" to="/about">about</Link>
         <Link className="mx-3 navlinks fw-bold fs-5" to="/login" > Log In </Link>
         

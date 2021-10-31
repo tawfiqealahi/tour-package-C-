@@ -1,48 +1,71 @@
-import { getAuth,signInWithPopup, GoogleAuthProvider  } from "firebase/auth";
-import { useState } from "react";
-import { useHistory, useLocation } from "react-router";
-// import { useHistory } from 'react-router-dom';
+import { getAuth,signInWithPopup, GoogleAuthProvider,onAuthStateChanged, signOut  } from "firebase/auth";
+import { useEffect, useState } from "react";
+
 import AuthInit from "../Components/LoginDetails/firebase/firebase.init";
 
 
 AuthInit();
 
 const useFirebase = () => {
-
-
     const [user,setUser]=useState({});
     console.log(user);
+
+    const [loading, setLoading] = useState(true)
+
+    
    
     const auth = getAuth();
+    
+
+
     const GoogleProvider = new GoogleAuthProvider();
 
     const signInWithGoogle=()=>{
 
-        // const location = useLocation();
-        // const history = useHistory();
-        const location =useLocation();
-        const history = useHistory();
-                const redirect_uri = location.state?.from || '/servicedetails';
-
-
-        signInWithPopup(auth, GoogleProvider)
-        .then(result=>{
+        return signInWithPopup(auth, GoogleProvider)
+        .finally(()=>{setLoading(false)})
+        // .then(result=>{
             
-            const user = result.user;
-            history.push(redirect_uri)
-            setUser(user);
+        //     const user = result.user;
+        //     setUser(user);
 
-        }).catch(error=>{
+        // }).catch(error=>{
         
-            const errorCode = error.code;
-            const errorMessage = error.message;
+        //     const errorCode = error.code;
+        //     const errorMessage = error.message;
             
-            console.log(errorCode, errorMessage);
-        })
+        //     console.log(errorCode, errorMessage);
+        // })
        
     }
+
+    // log out 
+    const logOut = () => {
+        setLoading(true);
+        signOut(auth)
+            .then(() => {
+                setUser({})
+            })
+            .finally(() => setLoading(false))
+    };
+
+    // observe user state changed
+	useEffect(() => {
+		const unsubscribe = onAuthStateChanged(auth, (user) => {
+			if (user) {
+				setUser(user);
+			} else {
+				setUser({});
+			}
+			setLoading(false);
+		});
+		return () => unsubscribe;
+	}, []);
+
+
+
     return{
-        user, signInWithGoogle
+        user, signInWithGoogle, loading, logOut
     }
 
 };

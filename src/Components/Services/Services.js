@@ -29,8 +29,7 @@ const Services = () => {
   <Card.Body>
     <Card.Title>{e.title}</Card.Title>
     
-    <Button variant="primary"><Link to="/servicedetails">View Details</Link></Button>
-    {/* <Link to="/servicedetails"><Button variant="primary">View Details</Button></Link> */}
+    <Link to="/servicedetails"><Button variant="primary">View Details</Button></Link>
   </Card.Body>
 </Card>
              

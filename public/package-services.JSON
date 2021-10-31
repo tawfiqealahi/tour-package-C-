@@ -1,0 +1,59 @@
+[
+    {
+    "id": "1",
+    "title": "Paris and Bordeaux",
+    "location": "Florida,Canada",
+    "price": "$235.00",
+    "image": "https://raw.githubusercontent.com/tawfiqealahi/images/main/tour-package-img/package1.jpg"
+    },
+    {
+        "id": "2",
+        "title": "Seattle, LA, Vegas",
+            "location": "Florida,Canada",
+        "price": "$210.00",
+        "image": "https://raw.githubusercontent.com/tawfiqealahi/images/main/tour-package-img/package2.jpg"
+        },
+    {
+    "id": "3",
+    "title": "Rome, Madrid",
+        "location": "Florida,Canada",
+    "price": "$130.00",
+    "image": "https://raw.githubusercontent.com/tawfiqealahi/images/main/tour-package-img/package3.jpg"
+    },
+    {
+    "id": "4",
+    "title": "Celsius Meter",
+        "location": "Florida,Canada",
+    "price": "$130.00",
+    "image": "https://raw.githubusercontent.com/tawfiqealahi/images/main/tour-package-img/package4.jpg"
+    },
+    {
+    "id": "5",
+    "title": "Florida Family",
+        "location": "Florida,Canada",
+    "price": "$130.00",
+    "image": "https://raw.githubusercontent.com/tawfiqealahi/images/main/tour-package-img/package5.jpg"
+    },
+    {
+    "id": "6",
+    "title": "Rome City Tour",
+        "location": "Florida,Canada",
+    "price": "$130.00",
+    "image": "https://tse4.mm.bing.net/th?id=OIP.tOk2p07qA2qBVfarW-6DvgHaE7&pid=Api&P=0&w=235&h=157"
+    },
+    {
+    "id": "7",
+    "title": "Florida Family",
+        "location": "Florida,Canada",
+    "price": "$130.00",
+    "image": "https://tse2.mm.bing.net/th?id=OIP.dYu99mp2fZmpkNMdjE4X1QHaE8&pid=Api&P=0&w=260&h=175"
+    },
+    {
+    "id": "8",
+    "title": "Hawaii Life Style",
+        "location": "Florida,Canada",
+    "price": "$130.00",
+    "image": "https://raw.githubusercontent.com/tawfiqealahi/images/main/tour-package-img/package6.jpg"
+    }
+
+    ]

@@ -6,6 +6,8 @@ import Login from './Components/LoginDetails/Login/Login';
 import ErrorPage from './Components/ErrorPage';
 import AuthProvider from './Components/Context/AuthProvider';
 import Services from './Components/Services/Services';
+import PrivateRoute from './Components/LoginDetails/Login/PrivateRoute/PrivateRoute';
+import ServiceDetails from './ServiceDetails/ServiceDetails';
 
 
 
@@ -28,6 +30,10 @@ function App() {
         <Route exact path="/login">
             <Login></Login>
           </Route>
+          <PrivateRoute exact path="/servicedetails">
+            <ServiceDetails></ServiceDetails>
+          </PrivateRoute>
+
 
           <Route exact path="/*">
             <ErrorPage></ErrorPage>

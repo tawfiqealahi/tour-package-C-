@@ -4,11 +4,13 @@ import './Login.css';
 import { Button ,} from 'react-bootstrap';
 import useAuth from '../../../Hooks/useAuth';
 import MenuBar from '../../Header/MenuBar/MenuBar';
+// import { useLocation,useHistory } from 'react-router-dom';
 
 
 const Login = () => {
 
     const {signInWithGoogle}= useAuth();
+   
 
    
 

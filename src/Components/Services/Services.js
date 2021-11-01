@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Button, Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import MenuBar from "../Header/MenuBar/MenuBar";
 import "./Services.css";
 
 const Services = () => {
@@ -31,7 +30,7 @@ const Services = () => {
     <div>
   
       <div className="service">
-        <h3 className="threed"> PREVENTION</h3>
+        <h3 className="threed"> OUR PACKAGES</h3>
         <h2 className="prevent-heading">How to Prevent Yourself</h2>
         <p>
           Lorem ipsum dolor sit amet, consectetuer adipiscing <br /> elit.

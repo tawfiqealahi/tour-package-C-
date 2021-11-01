@@ -10,6 +10,8 @@ import PrivateRoute from './Components/LoginDetails/Login/PrivateRoute/PrivateRo
 import ServiceDetails from './ServiceDetails/ServiceDetails';
 import Orders from './Components/Orders/Orders';
 import AllOrders from './Components/AllOrders/AllOrders';
+import Footer from './Components/Footer/Footer';
+import Subscribe from './Components/Services/Subscribe/Subscribe';
 
 
 
@@ -29,19 +31,27 @@ function App() {
           <Route exact path="/service">
             <Services></Services>
           </Route>
-          <Route exact path="/orders">
-            <Orders></Orders>
-          </Route>
-          <Route exact path="/allorders">
-            <AllOrders></AllOrders>
-          </Route>
-        <Route exact path="/login">
-            <Login></Login>
-          </Route>
           <PrivateRoute exact path="/servicedetails">
             <ServiceDetails></ServiceDetails>
           </PrivateRoute>
-
+          
+          <Route exact path="/subscribe">
+           <Subscribe></Subscribe>
+          </Route>
+          <PrivateRoute exact path="/orders">
+            <Orders></Orders>
+          </PrivateRoute>
+          <PrivateRoute exact path="/allorders">
+            <AllOrders></AllOrders>
+          </PrivateRoute>
+        <Route exact path="/login">
+            <Login></Login>
+          </Route>
+        
+         
+          <Route exact path="/footer">
+           <Footer></Footer>
+          </Route>
 
           <Route exact path="/*">
             <ErrorPage></ErrorPage>

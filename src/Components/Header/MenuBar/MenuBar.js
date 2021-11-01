@@ -27,7 +27,7 @@ const MenuBar = () => {
             </Link>
         {
           user.email ? (
-            <Link to="/login">
+            <Link to="/">
               <button
                 onClick={logOut}
                 className="items btn btn-info p-1 "
@@ -36,7 +36,7 @@ const MenuBar = () => {
               </button>
             </Link>
             ) : (
-              <Link to="/">
+              <Link to="/login">
                 <button className="items btn btn-info p-1 ">
                   Register
                 </button>

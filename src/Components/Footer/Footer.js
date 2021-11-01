@@ -1,18 +1,6 @@
 import React from "react";
 import "./Footer.css";
-import logoImage from '../../images/logo.png'
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faFacebookSquare,
-  faInstagramSquare,
-  faTwitterSquare,
-  faYoutube,
-} from "@fortawesome/free-brands-svg-icons";
-import {
-  faCoffee,
-  faPhoneVolume,
-  faMapMarkedAlt,
-} from "@fortawesome/free-solid-svg-icons";
+
 import { Nav } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 
@@ -26,19 +14,19 @@ const Footer = () => {
           <div className="row">
             <div className="col-md-5">
               <div className="left-container text-start">
-                <h1> <span className="text-danger"> <img src={logoImage} alt="LogoImage" /> </span></h1>
+                <h1> <span className="text-danger fw-bolder"> TOUR PACKAGE </span> </h1>
                 <div className="icons-container d-flex text-center ">
                   <div className="icon">
-                    <FontAwesomeIcon icon={faInstagramSquare} />
+                   
                   </div>
                   <div className="icon">
-                    <FontAwesomeIcon icon={faTwitterSquare} />
+                    
                   </div>
                   <div className="icon">
-                    <FontAwesomeIcon icon={faYoutube} />
+                    
                   </div>
                   <div className="icon">
-                    <FontAwesomeIcon icon={faFacebookSquare} />
+                 
                   </div>
                 </div>
                 <p className="mt-4 ">
@@ -73,7 +61,7 @@ const Footer = () => {
                 />
                 <div className="phone d-flex align-items-center justify-content-center mt-4">
                   <div className="foter-phone-icon">
-                    <FontAwesomeIcon icon={faPhoneVolume} />
+                  
                   </div>
                   <div>
                     <h5>+1 8 800 555 35 35</h5>
@@ -81,7 +69,7 @@ const Footer = () => {
                 </div>
                 <div className="map d-flex align-items-center justify-content-center">
                   <div className="foter-phone-icon">
-                    <FontAwesomeIcon icon={faMapMarkedAlt} />
+                   
                   </div>
                   <div>
                     <p>

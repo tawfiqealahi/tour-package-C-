@@ -29,7 +29,7 @@ const Services = () => {
   }, []);
   return (
     <div>
-      <MenuBar></MenuBar>
+  
       <div className="service">
         <h3 className="threed"> PREVENTION</h3>
         <h2 className="prevent-heading">How to Prevent Yourself</h2>

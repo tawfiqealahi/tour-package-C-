@@ -3,7 +3,6 @@ import './AllOrders.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import MenuBar from '../Header/MenuBar/MenuBar';
 import { Table } from 'react-bootstrap';
-import useFirebase from '../../Hooks/useFirebase';
 
 
 const AllOrders = () => {

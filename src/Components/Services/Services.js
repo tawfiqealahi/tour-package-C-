@@ -1,10 +1,27 @@
 import React, { useEffect, useState } from "react";
 import { Button, Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import MenuBar from "../Header/MenuBar/MenuBar";
 import "./Services.css";
 
 const Services = () => {
   const [data, setData] = useState([]);
+  // const [package, setPackage] = useState([]);
+  const [search , setSearch]=useState('');
+
+  const handleInput=(e)=>{
+    setSearch(e.target.value);
+  };
+
+  const handleSearch=()=>{
+    fetch(`http://localhost:5000/searchValue?search=${search}`)
+    .then(res=>res.json())
+    .then(result=>setData(result))
+    
+
+    // console.log('search ok');
+  };
+
   useEffect(() => {
     fetch("./package-services.JSON")
       .then((res) => res.json())
@@ -12,6 +29,7 @@ const Services = () => {
   }, []);
   return (
     <div>
+      <MenuBar></MenuBar>
       <div className="service">
         <h3 className="threed"> PREVENTION</h3>
         <h2 className="prevent-heading">How to Prevent Yourself</h2>
@@ -19,6 +37,8 @@ const Services = () => {
           Lorem ipsum dolor sit amet, consectetuer adipiscing <br /> elit.
           Aenean ligula eget dolor. Aenean massa.
         </p>
+        <input onChange={handleInput} type="text" className="p-2 m-3" />
+        <button onClick={handleSearch} className="btn btn-primary m-1" >Search</button>
       </div>
       <div className="service-cart container-fluid">
         <div className="row">

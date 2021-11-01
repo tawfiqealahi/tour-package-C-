@@ -15,11 +15,12 @@ const MenuBar = () => {
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">
       <Nav className="ms-auto navlink">
-        <Link className="mx-3 navlinks fw-bold fs-5" to="/home">home</Link>
-        <Link className="mx-3 navlinks fw-bold fs-5" to="/service">Service</Link>
-        <Link className="mx-3 navlinks fw-bold fs-5" to="/order"> orders</Link>
-        <Link className="mx-3 navlinks fw-bold fs-5" to="/about">about</Link>
-        <Link className="mx-3 navlinks fw-bold fs-5" to="/login" > Log In </Link>
+        <Link className="mx-2  navlinks " to="/home">home</Link>
+        <Link className="mx-2  navlinks " to="/service">Service</Link>
+        <Link className="mx-2  navlinks " to="/orders"> orders</Link>
+        <Link className="mx-2  navlinks " to="/allorders"> All Orders</Link>
+        <Link className="mx-2  navlinks " to="/about">about</Link>
+        <Link className="mx-2  navlinks " to="/login" > Log In </Link>
         
       </Nav>
     </Navbar.Collapse>

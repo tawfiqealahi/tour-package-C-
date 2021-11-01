@@ -9,6 +9,7 @@ import Services from './Components/Services/Services';
 import PrivateRoute from './Components/LoginDetails/Login/PrivateRoute/PrivateRoute';
 import ServiceDetails from './ServiceDetails/ServiceDetails';
 import Orders from './Components/Orders/Orders';
+import AllOrders from './Components/AllOrders/AllOrders';
 
 
 
@@ -28,8 +29,11 @@ function App() {
           <Route exact path="/service">
             <Services></Services>
           </Route>
-          <Route exact path="/order">
+          <Route exact path="/orders">
             <Orders></Orders>
+          </Route>
+          <Route exact path="/allorders">
+            <AllOrders></AllOrders>
           </Route>
         <Route exact path="/login">
             <Login></Login>

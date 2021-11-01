@@ -8,6 +8,7 @@ import AuthProvider from './Components/Context/AuthProvider';
 import Services from './Components/Services/Services';
 import PrivateRoute from './Components/LoginDetails/Login/PrivateRoute/PrivateRoute';
 import ServiceDetails from './ServiceDetails/ServiceDetails';
+import Orders from './Components/Orders/Orders';
 
 
 
@@ -26,6 +27,9 @@ function App() {
           </Route>
           <Route exact path="/service">
             <Services></Services>
+          </Route>
+          <Route exact path="/order">
+            <Orders></Orders>
           </Route>
         <Route exact path="/login">
             <Login></Login>

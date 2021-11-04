@@ -3,10 +3,10 @@ import { Form } from 'react-bootstrap';
 
 const Subscribe = () => {
     return (
-        <div>
+        <div className="my-3">
             <Form>
   <label>
-    Name:
+    
     <input type="text" name="name" />
   </label>
   <input type="submit" value="Subscribe us" />

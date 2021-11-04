@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Button, Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import MenuBar from "../Header/MenuBar/MenuBar";
-import "./Services.css";
+import "./ServiceHome.css";
 
 const Services = () => {
   const [data, setData] = useState([]);
@@ -28,7 +27,6 @@ const Services = () => {
   }, []);
   return (
     <div>
-      <MenuBar></MenuBar>
       <div className="service">
         <h3 className="threed"> OUR PACKAGES</h3>
         <h2 className="prevent-heading">How to Prevent Yourself</h2>
@@ -58,11 +56,9 @@ const Services = () => {
                 <Card.Body>
                   <Card.Title>{e.title}</Card.Title>
 
-                   
-                     <Link to={`/servicedetails/${e.id}`}>
-                     <Button variant="primary">View Details</Button>
-                   </Link>
-                  
+                  <Link to={`/servicedetails/${e.id}`}>
+                    <Button variant="primary">View Details</Button>
+                  </Link>
                 </Card.Body>
               </Card>
             </div>

@@ -18,6 +18,7 @@ import Subscribe from './Components/Services/Subscribe/Subscribe';
 function App() {
   return (
     <div className="App">
+     
       <AuthProvider>
       <BrowserRouter>
 
@@ -31,7 +32,7 @@ function App() {
           <Route exact path="/service">
             <Services></Services>
           </Route>
-          <PrivateRoute exact path="/servicedetails">
+          <PrivateRoute exact path="/servicedetails/:serviceId">
             <ServiceDetails></ServiceDetails>
           </PrivateRoute>
           

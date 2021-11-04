@@ -1,6 +1,8 @@
 import React from "react";
-// import Footer from "../Footer/Footer";
+import Footer from "../Footer/Footer";
+import HappyClient from "../HappyClient/HappyClient";
 import Banner from "../Header/Banner/Banner";
+import ServiceHome from '../ServiceHome/ServiceHome';
 import Services from "../Services/Services";
 import Subscribe from "../Services/Subscribe/Subscribe";
 
@@ -9,8 +11,9 @@ const HomePage = () => {
     <div>
 
       <Banner></Banner>
-      <Services></Services>
-      <Subscribe></Subscribe>
+      <ServiceHome></ServiceHome>
+      {/* <HappyClient></HappyClient> */}
+      {/* <Subscribe></Subscribe> */}
       {/* <Footer></Footer> */}
     </div>
   );

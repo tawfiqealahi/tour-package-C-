@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import {  Card } from 'react-bootstrap';
+import Footer from '../Components/Footer/Footer';
+import MenuBar from '../Components/Header/MenuBar/MenuBar';
 
 const ServiceDetails = () => {
     const [data, setData] = useState([]);
@@ -11,6 +13,7 @@ const ServiceDetails = () => {
 
     return (
         <div>
+          <MenuBar></MenuBar>
             <div className="text-center">
                 {data?.map((e) => (
             <div key={e.id} className="col-md-3 services-size col-xl-3 col-sm-6">
@@ -27,6 +30,7 @@ const ServiceDetails = () => {
             </div>
           ))}
             </div>
+            <Footer></Footer>
         </div>
     );
 };

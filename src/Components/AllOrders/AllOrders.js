@@ -1,46 +1,44 @@
-import React, { useEffect, useState } from 'react';
-import './AllOrders.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import MenuBar from '../Header/MenuBar/MenuBar';
-import { Table } from 'react-bootstrap';
-
+import React, { useEffect, useState } from "react";
+import "./AllOrders.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import MenuBar from "../Header/MenuBar/MenuBar";
+import { Table } from "react-bootstrap";
+import Orders from "../Orders/Orders";
 
 const AllOrders = () => {
-    const [orders, setOrders] = useState([]);
-    
+  const [orders, setOrders] = useState([]);
 
-    const [control, setConrol] = useState(false);
+  const [control, setConrol] = useState(false);
 
-    useEffect(()=>{
-        fetch("http://localhost:5000/allorders")
-        .then(res=>res.json())
-        .then(data=> setOrders(data));
-    },[]);
+  useEffect(() => {
+    fetch("http://localhost:5000/allOrders")
+      .then((res) => res.json())
+      .then((data) => setOrders(data));
+  }, []);
 
+  const handleDelete = (id) => {
+    fetch(`http://localhost:5000/deleteEvent/${id}`, {
+      method: "DELETE",
+      headers: { "content-type": "application/json" },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.deletedCount) {
+          setConrol(!control);
+        } else {
+          setConrol(false);
+        }
+      });
+    console.log(id);
+  };
 
-    const handleDelete = (id) => {
-        fetch(`http://localhost:5000/deleteEvent/${id}`, {
-          method: "DELETE",
-          headers: { "content-type": "application/json" },
-        })
-          .then((res) => res.json())
-          .then((data) => {
-            if (data.deletedCount) {
-              setConrol(!control);
-            } else {
-              setConrol(false);
-            }
-          });
-        console.log(id);
-      };
+  return (
+    <div>
+      <MenuBar></MenuBar>
+      <h1>Total Orders: {orders?.length}</h1>
+      {/* table */}
 
-    return (
-        <div>
-            <MenuBar></MenuBar>
-            <h1>Total Orders:   {orders?.length}</h1>
-            {/* table */}
-
-            <Table striped bordered hover>
+      <Table striped bordered hover>
         <thead>
           <tr>
             <th>#</th>
@@ -52,8 +50,7 @@ const AllOrders = () => {
             <th>Action</th>
           </tr>
         </thead>
-        {
-        orders?.map((pd, index) => (
+        {orders?.map((pd, index) => (
           <tbody>
             <tr>
               <td>{index}</td>
@@ -70,8 +67,10 @@ const AllOrders = () => {
           </tbody>
         ))}
       </Table>
-        </div>
-    );
+      {control ==="orders" && <Orders></Orders>}
+
+    </div>
+  );
 };
 
 export default AllOrders;

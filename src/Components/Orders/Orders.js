@@ -1,4 +1,4 @@
-import React, { useEffect, } from "react";
+import React, { useEffect, useState, } from "react";
 import { useForm } from "react-hook-form";
 import { useParams } from "react-router";
 import useFirebase from "../../Hooks/useFirebase";
@@ -7,6 +7,7 @@ import MenuBar from "../Header/MenuBar/MenuBar";
 const Orders = () => {
   const { user } = useFirebase();
   const {id} = useParams();
+  const [service, setService]= useState();
   
   const {
     register,
@@ -28,8 +29,10 @@ const Orders = () => {
   useEffect(() => {
     fetch(`http://localhost:5000/myOrders/${id}`)
       .then((res) => res.json())
-      .then((data) => console.log(data));
+      .then((data) => setService(data));
   }, []);
+
+  console.log(service);
 
   return (
     <div>
@@ -38,7 +41,19 @@ const Orders = () => {
         You are booking for :
         <span className="fw-bolder"> Paris and Bordeaux</span>{" "}
       </h3>
-      {/* "handleSubmit" will validate your inputs before invoking "onSubmit"  */}
+      <div className="row container">
+        <div className="col-md-6">
+      <div className="details-img">
+        <img className="w-75" src={service?.image} alt="image" />
+      </div>
+      <h2> {service?.title}</h2>
+      <h5>Price: {service?.price} </h5>
+
+
+
+        </div>
+        <div className="col-md-6">
+           {/* "handleSubmit" will validate your inputs before invoking "onSubmit"  */}
       <form onSubmit={handleSubmit(onSubmit)}>
         {/* register your input into the hook by invoking the "register" function */}
         <input
@@ -53,6 +68,7 @@ const Orders = () => {
           className="my-3"
           {...register("Package", { required: true })}
           placeholder="Name of Packages"
+          defaultValue={service?.title}
           type="text"
         />{" "}
         <br />
@@ -74,6 +90,7 @@ const Orders = () => {
           className="my-3"
           {...register("Location", { required: true })}
           placeholder="Location"
+          defaultValue={service?.location}
           type="text"
         />{" "}
         <br />
@@ -106,6 +123,9 @@ const Orders = () => {
         <br />
         <input className="bg-info rounded-1 px-2" type="submit" placeholder="Confirm" />
       </form>
+
+        </div>
+      </div>
     </div>
   );
 };

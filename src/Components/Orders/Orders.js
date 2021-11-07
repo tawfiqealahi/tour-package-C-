@@ -1,12 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, } from "react";
 import { useForm } from "react-hook-form";
+import { useParams } from "react-router";
 import useFirebase from "../../Hooks/useFirebase";
 import MenuBar from "../Header/MenuBar/MenuBar";
 
 const Orders = () => {
   const { user } = useFirebase();
-  const [events, setEvents] = useState([]);
-
+  const {id} = useParams();
+  
   const {
     register,
     handleSubmit,
@@ -16,19 +17,19 @@ const Orders = () => {
   const onSubmit = (data) => {
     fetch("http://localhost:5000/orders", {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: { "content-Type": "application/json" },
       body: JSON.stringify(data),
     })
       .then((res) => res.json())
       .then((result) => console.log(result));
-    // console.log(data); 
+    console.log(data); 
   };
 
   useEffect(() => {
-    fetch(`http://localhost:5000/myorders/${user?.email}`)
+    fetch(`http://localhost:5000/myOrders/${id}`)
       .then((res) => res.json())
-      .then((data) => setEvents(data));
-  }, [user.email]);
+      .then((data) => console.log(data));
+  }, []);
 
   return (
     <div>
@@ -79,22 +80,22 @@ const Orders = () => {
         {/* errors will return when field validation fails  */}
         {errors.exampleRequired && <span>This field is required</span>} 
         
-        <p>Departure Date</p><input
+        {/* <p>Departure Date</p><input
           className="mb-3"
           defaultValue="Departure Date"
           placeholder="Departure Date: D/M/Y"
           
           {...register("Departure Date", { required: true })}
         />{" "}
-        <br />
-        <input
+        <br /> */}
+        {/* <input
           className="my-3"
           defaultValue="Arrival Date"
           placeholder="Arrival Date: D/M/Y"
          
           {...register("Arrival Date", { required: true })}
         />{" "}
-        <br />
+        <br /> */}
         <select className="mb-3" {...register("Type Trip")}>
           <option value="adventure">adventure</option>
           <option value="cultural">cultural</option>

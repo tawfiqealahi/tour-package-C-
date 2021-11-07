@@ -6,23 +6,9 @@ import "./Services.css";
 
 const Services = () => {
   const [data, setData] = useState([]);
-  // const [package, setPackage] = useState([]);
-  const [search, setSearch] = useState("");
-
-  const handleInput = (e) => {
-    setSearch(e.target.value);
-  };
-
-  const handleSearch = () => {
-    fetch(`http://localhost:5000/searchValue?search=${search}`)
-      .then((res) => res.json())
-      .then((result) => setSearch(result));
-
-    // console.log('search ok');
-  };
 
   useEffect(() => {
-    fetch("./package-services.JSON")
+    fetch("http://localhost:5000/allServices")
       .then((res) => res.json())
       .then((result) => setData(result));
   }, []);
@@ -36,16 +22,16 @@ const Services = () => {
           Lorem ipsum dolor sit amet, consectetuer adipiscing <br /> elit.
           Aenean ligula eget dolor. Aenean massa.
         </p>
-        <input onChange={handleInput} type="text" className="p-2 m-3" />
-        <button onClick={handleSearch} className="btn btn-primary m-1">
+        <input  type="text" className="p-2 m-3" />
+        <button  className="btn btn-primary m-1">
           Search
         </button>
       </div>
-      <div className="service-cart container-fluid">
+      <div className="service-cart container">
         <div className="row">
           {data?.map((e) => (
             <div
-              key={e.id}
+              key={e._id}
               className="col-md-3 services-size col-xl-3 col-sm-6"
             >
               <Card className="m-2 card-body">
@@ -59,8 +45,8 @@ const Services = () => {
                   <Card.Title>{e.title}</Card.Title>
 
                    
-                     <Link to={`/servicedetails/${e.id}`}>
-                     <Button variant="primary">View Details</Button>
+                     <Link to={`/orders/${e._id}`}>
+                     <Button variant="primary">Booking</Button>
                    </Link>
                   
                 </Card.Body>

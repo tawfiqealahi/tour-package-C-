@@ -13,7 +13,7 @@ const AllOrders = () => {
   useEffect(() => {
     fetch("http://localhost:5000/allOrders")
       .then((res) => res.json())
-      .then((data) => setOrders(data));
+      .then((data) => console.log(data));
   }, []);
 
   const handleDelete = (id) => {

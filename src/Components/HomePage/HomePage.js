@@ -11,7 +11,7 @@ const HomePage = () => {
     <div>
 
       <Banner></Banner>
-      <ServiceHome></ServiceHome>
+      {/* <ServiceHome></ServiceHome> */}
       {/* <HappyClient></HappyClient> */}
       {/* <Subscribe></Subscribe> */}
       {/* <Footer></Footer> */}

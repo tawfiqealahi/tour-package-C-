@@ -8,7 +8,7 @@ AuthInit();
 
 const useFirebase = () => {
     const [user,setUser]=useState({});
-    console.log(user);
+    // console.log(user);
 
     const [loading, setLoading] = useState(true)
 
@@ -60,7 +60,7 @@ const useFirebase = () => {
 			setLoading(false);
 		});
 		return () => unsubscribe;
-	}, []);
+	},);
 
 
 

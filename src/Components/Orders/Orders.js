@@ -7,8 +7,7 @@ import MenuBar from "../Header/MenuBar/MenuBar";
 const Orders = () => {
   const { user } = useFirebase();
   const {id} = useParams();
-  const [service, setService]= useState();
-  const email = sessionStorage.getItem("email");
+  const [service, setService]= useState({});
   
   const {
     register,
@@ -36,7 +35,7 @@ const Orders = () => {
       .then((data) => setService(data));
   }, []);
 
-  // console.log(service);
+  console.log(service);
 
   return (
     <div>

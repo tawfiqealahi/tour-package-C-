@@ -11,7 +11,6 @@ import Orders from './Components/Orders/Orders';
 import AllOrders from './Components/AllOrders/AllOrders';
 import Footer from './Components/Footer/Footer';
 import Subscribe from './Components/Services/Subscribe/Subscribe';
-import Booking from './Components/Booking/Booking';
 
 
 

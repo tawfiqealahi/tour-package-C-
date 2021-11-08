@@ -8,6 +8,7 @@ const Orders = () => {
   const { user } = useFirebase();
   const {id} = useParams();
   const [service, setService]= useState();
+  const email = sessionStorage.getItem("email");
   
   const {
     register,
@@ -16,15 +17,18 @@ const Orders = () => {
   } = useForm();
 
   const onSubmit = (data) => {
-    fetch("http://localhost:5000/orders", {
+    data.Email = user?.email;
+    // console.log(data); 
+
+    fetch("http://localhost:5000/Orders", {
       method: "POST",
       headers: { "content-Type": "application/json" },
       body: JSON.stringify(data),
     })
       .then((res) => res.json())
       .then((result) => console.log(result));
-    console.log(data); 
   };
+
 
   useEffect(() => {
     fetch(`http://localhost:5000/myOrders/${id}`)
@@ -32,7 +36,7 @@ const Orders = () => {
       .then((data) => setService(data));
   }, []);
 
-  console.log(service);
+  // console.log(service);
 
   return (
     <div>
@@ -83,6 +87,7 @@ const Orders = () => {
           className="my-3"
           {...register("Email", { required: true })}
           placeholder="Email"
+          defaultValue={service?.email}
           type="email"
         /> <br />
 
@@ -121,7 +126,7 @@ const Orders = () => {
           <option value="shopping">shopping</option>
         </select>{" "}
         <br />
-        <input className="bg-info rounded-1 px-2" type="submit" placeholder="Confirm" />
+        <input className="bg-info rounded-1 px-2" type="submit"  value="Order Now" />
       </form>
 
         </div>

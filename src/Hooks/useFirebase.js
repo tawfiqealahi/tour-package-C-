@@ -8,6 +8,7 @@ AuthInit();
 
 const useFirebase = () => {
     const [user,setUser]=useState({});
+    const [error, setError] = useState("");
     // console.log(user);
 
     const [loading, setLoading] = useState(true)
@@ -23,19 +24,22 @@ const useFirebase = () => {
     const signInWithGoogle=()=>{
 
         return signInWithPopup(auth, GoogleProvider)
-        .finally(()=>{setLoading(false)})
-        // .then(result=>{
-            
-        //     const user = result.user;
-        //     setUser(user);
 
-        // }).catch(error=>{
-        
-        //     const errorCode = error.code;
-        //     const errorMessage = error.message;
+        // .finally(()=>{setLoading(false)})
+        .then(result=>{
             
-        //     console.log(errorCode, errorMessage);
-        // })
+            const user = result.user;
+            setUser(user);
+            sessionStorage.setItem("email", user.email);
+
+            setError("");
+
+        }).catch(error=>{
+        
+            const errorMessage = error.message;
+            
+            setError( errorMessage);
+        })
        
     }
 

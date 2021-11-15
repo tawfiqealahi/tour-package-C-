@@ -9,7 +9,7 @@ const Header = () => {
         <div className="sticky-top">
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
                 <div className="container">
-                    <Link className="navbar-brand fw-bolder " to="/home">BIKE MANIA</Link>
+                    <Link className="navbar-brand fw-bolder " to="/home">TOUR PACKAGE</Link>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                     </button>
@@ -19,7 +19,7 @@ const Header = () => {
                         <Link className="nav-link active" aria-current="page" to="/home">Home</Link>
                         </li>
                         <li className="nav-item">
-                        <Link className="nav-link" to="/allProducts">All Products</Link>
+                        <Link className="nav-link" to="/allProducts">All Services</Link>
                         </li>
                         <li className="nav-item">
                         <Link className="nav-link" to="/about">About</Link>

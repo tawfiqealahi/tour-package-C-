@@ -9,7 +9,7 @@ import img6 from "../../images/brand6.png";
 const Brands = () => {
   return (
     <div>
-      <h1 className="text-center fw-bolder pt-3">BRANDS</h1>
+      <h1 className="text-center fw-bolder pt-3">TRANSPORT AGENCY</h1>
       <div className="container justify-content-around text-center">
         <img src={img1} alt="..." />
         <img src={img2} alt="..." />

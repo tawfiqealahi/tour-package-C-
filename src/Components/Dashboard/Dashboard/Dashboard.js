@@ -7,7 +7,6 @@ import AddReview from "../AddReview/AddReview";
 import MakeAdmin from "../MakeAdmin/MakeAdmin";
 import ManageAllOrders from "../ManageAllOrders/ManageAllOrders";
 import ManageProducts from "../ManageProducts/ManageProducts";
-import Pay from "../Pay/Pay";
 import "./Dashboard.css";
 
 const Dashboard = () => {
@@ -39,12 +38,7 @@ const Dashboard = () => {
             <Link to={`${url}/addreview`}>
               <li className="text-white">Review</li>
             </Link>
-            <Link to={`${url}/pay`}>
-              <li className="text-white">Pay</li>
-            </Link>
-            <Link to={`${url}/pay`}>
-              <li className="text-white">Pay</li>
-            </Link>
+           
             {isAdmin && (
               <div>
                 <h5 className="text-white mt-3">Admin</h5>
@@ -72,9 +66,7 @@ const Dashboard = () => {
             <Route exact path={`${path}/addreview`}>
               <AddReview></AddReview>
             </Route>
-            <Route exact path={`${path}/pay`}>
-              <Pay></Pay>
-            </Route>
+            
             <Route exact path={`${path}/manageAllOrder`}>
               <ManageAllOrders></ManageAllOrders>
             </Route>

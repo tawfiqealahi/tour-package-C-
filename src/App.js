@@ -1,68 +1,58 @@
-import './App.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import HomePage from './Components/HomePage/HomePage';
-import { BrowserRouter,Route, Switch } from 'react-router-dom';
-import Login from './Components/LoginDetails/Login/Login';
-import ErrorPage from './Components/ErrorPage';
-import AuthProvider from './Components/Context/AuthProvider';
-import Services from './Components/Services/Services';
-import PrivateRoute from './Components/LoginDetails/Login/PrivateRoute/PrivateRoute';
-import Orders from './Components/Orders/Orders';
-import AllOrders from './Components/AllOrders/AllOrders';
-import Footer from './Components/Footer/Footer';
-import Subscribe from './Components/Services/Subscribe/Subscribe';
-
-
+import "./App.css";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Home from "./components/Home/Home/Home";
+import Error from "./components/Error/Error";
+import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
+import LogIn from "./components/LogIn/LogIn";
+import Register from "./components/Register/Register";
+import AuthProvider from "./context/AuthProvider";
+import AllProducts from "./components/AllProducts/AllProducts";
+import OurAbout from "./components/OurAbout/OurAbout";
+import Dashboard from "./components/Dashboard/Dashboard/Dashboard";
+import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
+import Order from "./components/Order/Order";
 
 function App() {
   return (
-    <div className="App">
-     
-      <AuthProvider>
-      <BrowserRouter>
-
+    <AuthProvider>
+      <Router>
+        <Header></Header>
         <Switch>
           <Route exact path="/">
-            <HomePage></HomePage>
+            <Home></Home>
           </Route>
-          <Route exact path="/home">
-            <HomePage></HomePage>
+          <Route path="/home">
+            <Home></Home>
           </Route>
-          <Route exact path="/service">
-            <Services></Services>
-          </Route>
-          
-          <Route exact path="/subscribe">
-           <Subscribe></Subscribe>
-          </Route>
-          <PrivateRoute exact path="/orders/:id">
-            <Orders></Orders>
+          <PrivateRoute path="/dashboard">
+            <Dashboard></Dashboard>
           </PrivateRoute>
-{/*         
-          <PrivateRoute exact path="/bookings/:id">
-            <Booking></Booking>
-          </PrivateRoute> */}
-          <PrivateRoute exact path="/allorders">
-            <AllOrders></AllOrders>
+          <Route path="/allProducts">
+            <AllProducts></AllProducts>
+          </Route>
+          <PrivateRoute path="/products/:id">
+            <Order></Order>
           </PrivateRoute>
-        <Route exact path="/login">
-            <Login></Login>
+          <Route path="/about">
+            <OurAbout></OurAbout>
           </Route>
-        
-         
-          <Route exact path="/footer">
-           <Footer></Footer>
+          <Route path="/logIn">
+            <LogIn></LogIn>
           </Route>
-
-          <Route exact path="/*">
-            <ErrorPage></ErrorPage>
+          <Route path="/register">
+            <Register></Register>
           </Route>
-
+          <Route path="*">
+            <Error></Error>
+          </Route>
         </Switch>
-      </BrowserRouter>
-      </AuthProvider>
-    </div>
+        <Footer></Footer>
+      </Router>
+    </AuthProvider>
   );
 }
 
 export default App;
+
+

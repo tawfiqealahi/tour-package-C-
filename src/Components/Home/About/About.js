@@ -8,7 +8,7 @@ const About = () => {
             <div className="row">
                 <div className="col-md-4">
                     <div className="mt-5">
-                        <h5>Vehicle Service</h5>
+                        <h5> Service</h5>
                         <p>What We Do</p>
                         <p>Maximise the lifespan and value of your car with regular car servicing. Our expert technicians are trained to service any make and model of car using the latest techniques and diagnostic equipment.</p>
                     </div>

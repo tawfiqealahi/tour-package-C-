@@ -16,7 +16,7 @@ const Dashboard = () => {
   // const { user } = useAuth();
   const [isAdmin, setIsAdmin] = useState(false);
   useEffect(() => {
-    fetch(`http://localhost:5000/admin/${user?.email}`)
+    fetch(`https://desolate-citadel-65887.herokuapp.com/admin/${user?.email}`)
       .then((res) => res.json())
       .then((data) => {
         if (data[0]?.role === "admin") {
@@ -38,7 +38,7 @@ const Dashboard = () => {
             <Link to={`${url}/addreview`}>
               <li className="text-white">Review</li>
             </Link>
-           
+
             {isAdmin && (
               <div>
                 <h5 className="text-white mt-3">Admin</h5>
@@ -66,7 +66,7 @@ const Dashboard = () => {
             <Route exact path={`${path}/addreview`}>
               <AddReview></AddReview>
             </Route>
-            
+
             <Route exact path={`${path}/manageAllOrder`}>
               <ManageAllOrders></ManageAllOrders>
             </Route>

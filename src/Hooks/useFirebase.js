@@ -88,7 +88,7 @@ const useFirebase = () => {
   };
 
   const allUserRegisterData = (email) => {
-    fetch("http://localhost:5000/userData", {
+    fetch("https://desolate-citadel-65887.herokuapp.com/userData", {
       method: "POST",
       headers: {
         "content-type": "application/json",

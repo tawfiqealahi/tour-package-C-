@@ -5,7 +5,7 @@ const MyOrder = () => {
   const { user } = useAuth();
   const [myOrder, setMyOrder] = useState([]);
   useEffect(() => {
-    fetch(`http://localhost:5000/myOrder/${user?.email}`)
+    fetch(`https://desolate-citadel-65887.herokuapp.com/myOrder/${user?.email}`)
       .then((res) => res.json())
       .then((data) => setMyOrder(data));
   }, [user.email]);
@@ -13,7 +13,7 @@ const MyOrder = () => {
   const handleDeleteOrder = (id) => {
     const sure = window.confirm("Are you sure, you want to order remove");
     if (sure) {
-      fetch(`http://localhost:5000/myOrder/${id}`, {
+      fetch(`https://desolate-citadel-65887.herokuapp.com/myOrder/${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())

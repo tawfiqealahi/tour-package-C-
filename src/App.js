@@ -14,6 +14,7 @@ import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 import Order from "./components/Order/Order";
 
 function App() {
+
   return (
     <AuthProvider>
       <Router>
@@ -50,7 +51,9 @@ function App() {
         <Footer></Footer>
       </Router>
     </AuthProvider>
+    
   );
+
 }
 
 export default App;
